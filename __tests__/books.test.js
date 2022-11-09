@@ -8,12 +8,36 @@ describe('books routes', () => {
     return setup(pool);
   });
 
-  it('should return a list of books', async () => {
+  it('/books should return a list of books', async () => {
     const res = await request(app).get('/books');
     expect(res.body.length).toEqual(8);
     const startWithWhy = res.body.find((boo) => boo.id === '1');
     expect(startWithWhy).toHaveProperty('title', 'Start With Why');
     expect(startWithWhy).toHaveProperty('release', 2009);
+  });
+
+  // it('/books/:id should return book detail with author', async () => {
+  //   const res = await request(app).get('/books/1');
+  //   expect(res.body.length).toEqual(1);
+  //   const startWithWhy = res.body.find((boo) => boo.id === '1');
+  //   expect(startWithWhy).toHaveProperty('title', 'Start With Why');
+  //   expect(startWithWhy).toHaveProperty('release', 2009);
+  //   expect(startWithWhy.authors[0]).toHaveProperty('id');
+  //   expect(startWithWhy.authors[0]).toHaveProperty('first_name');
+  //   expect(startWithWhy.authors[0]).toHaveProperty('last_name');
+  // });
+
+  it('/books/:id should return book detail with author', async () => {
+    const resp = await request(app).get('/books/1');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      // last_name: expect.any(Array),
+      // first_name: expect.any(Array),
+      // pairs: expect.any(Array),
+      release: expect.any(Number),
+      title: expect.any(String),    
+    });
   });
 
   afterAll(() => {
