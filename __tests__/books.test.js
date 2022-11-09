@@ -23,8 +23,7 @@ describe('books routes', () => {
   //   expect(startWithWhy).toHaveProperty('title', 'Start With Why');
   //   expect(startWithWhy).toHaveProperty('release', 2009);
   //   expect(startWithWhy.authors[0]).toHaveProperty('id');
-  //   expect(startWithWhy.authors[0]).toHaveProperty('first_name');
-  //   expect(startWithWhy.authors[0]).toHaveProperty('last_name');
+  //   expect(startWithWhy.authors[0]).toHaveProperty('name');
   // });
 
   it('/books/:id should return book detail with author', async () => {
@@ -32,8 +31,7 @@ describe('books routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
       id: expect.any(String),
-      // last_name: expect.any(Array),
-      // first_name: expect.any(Array),
+      // name: expect.any(Array),
       // pairs: expect.any(Array),
       release: expect.any(Number),
       title: expect.any(String),    

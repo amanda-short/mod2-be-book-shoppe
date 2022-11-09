@@ -12,8 +12,7 @@ CREATE TABLE books (
 
 CREATE TABLE authors (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  first_name VARCHAR,
-  last_name VARCHAR
+  name VARCHAR
 );
 
 CREATE TABLE pairs (
@@ -37,19 +36,16 @@ VALUES
   ('Braving the Wilderness', '2017'),
   ('Dare to Lead', '2018'),
   ('The 7 Habits of Highly Effective People', '1989'),
-  ('Good to Great', '2001')
-  ;
+  ('Good to Great', '2001');
 
 INSERT INTO authors (
-    first_name,
-    last_name
+    name
 )  
 VALUES
-  ('Simon', 'Sinek'),
-  ('Brene', 'Brown'),
-  ('Stephen', 'Covey'),
-  ('Jim', 'Collins')
-  ;
+  ('Simon Sinek'),
+  ('Brene Brown'),
+  ('Stephen Covey'),
+  ('Jim Collins');
 
 INSERT INTO pairs (
     author_id,
@@ -64,5 +60,4 @@ VALUES
   (2,5,'Braving the Wilderness'),
   (2,6,'Dare to Lead'),
   (3,7,'The 7 Habits of Highly Effective People'),
-  (4,8,'Good to Great')
-  ;
+  (4,8,'Good to Great');
