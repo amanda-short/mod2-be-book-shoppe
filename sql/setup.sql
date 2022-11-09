@@ -12,7 +12,9 @@ CREATE TABLE books (
 
 CREATE TABLE authors (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  name VARCHAR
+  name VARCHAR,
+  dob VARCHAR,
+  pob VARCHAR
 );
 
 CREATE TABLE pairs (
@@ -39,13 +41,15 @@ VALUES
   ('Good to Great', '2001');
 
 INSERT INTO authors (
-    name
+    name,
+    dob,
+    pob
 )  
 VALUES
-  ('Simon Sinek'),
-  ('Brene Brown'),
-  ('Stephen Covey'),
-  ('Jim Collins');
+  ('Simon Sinek', 'October 9 1973', 'London UK'),
+  ('Brene Brown', 'November 18 1965', 'San Antonio TX'),
+  ('Stephen Covey', 'October 24 1932', 'Salt Lake City UT'),
+  ('Jim Collins', 'January 25 1958', 'Aurora CO');
 
 INSERT INTO pairs (
     author_id,
