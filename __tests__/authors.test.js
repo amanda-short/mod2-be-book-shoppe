@@ -21,8 +21,8 @@ describe('authors routes', () => {
       id: expect.any(String),
       name: expect.any(String),
       dob: expect.any(String),
-      pob: expect.any(String)
-      // pairs: expect.any(Array)
+      pob: expect.any(String),
+      pairs: expect.any(Array)
       // release: expect.any(Number),
       // title: expect.any(String),    
     });
