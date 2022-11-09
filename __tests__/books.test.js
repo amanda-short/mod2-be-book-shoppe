@@ -32,7 +32,7 @@ describe('books routes', () => {
     expect(resp.body).toEqual({
       id: expect.any(String),
       // name: expect.any(Array),
-      // pairs: expect.any(Array),
+      pairs: expect.any(Array),
       release: expect.any(Number),
       title: expect.any(String),    
     });
